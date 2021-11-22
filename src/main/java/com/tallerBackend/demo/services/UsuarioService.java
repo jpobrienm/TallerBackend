@@ -12,12 +12,14 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public ArrayList<UsuarioModel> obtenerUsuarios(){
-        return (ArrayList<UsuarioModel>) usuarioRepository.findAll();
-    }
-
     public UsuarioModel guardarUsuario(UsuarioModel usuario){
         return usuarioRepository.save(usuario);
+    }
+
+    // metodos de busqueda añadidos
+
+    public ArrayList<UsuarioModel> obtenerUsuarios(){
+        return (ArrayList<UsuarioModel>) usuarioRepository.findAll();
     }
 
     public Optional<UsuarioModel> obtenerPorId(long id){
@@ -26,6 +28,16 @@ public class UsuarioService {
 
     public ArrayList<UsuarioModel> obtenerPorPrioridad(Integer prioridad){
         return usuarioRepository.findByPrioridad(prioridad);
+    }
+
+    // funcionalidades extra para realizar otro tipo de busquedas
+
+    public ArrayList<UsuarioModel> obtenerPorNombre(String nombre){
+        return usuarioRepository.findByNombre(nombre);
+    }
+
+    public ArrayList<UsuarioModel> obtenerPorCorreo(String correo){
+        return usuarioRepository.findByCorreo(correo);
     }
 
     public boolean eliminarUsuario(Long id){
