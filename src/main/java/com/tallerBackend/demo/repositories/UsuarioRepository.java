@@ -8,5 +8,6 @@ import java.util.ArrayList;
 
 @Repository
 public interface UsuarioRepository extends CrudRepository<UsuarioModel, Long> {
-    public abstract ArrayList<UsuarioModel> findByPrioridad(Integer prioridad);
+    // se eliminan redundancias dentro de la interfaz
+    public ArrayList<UsuarioModel> findByPrioridad(Integer prioridad);
 }

@@ -12,7 +12,7 @@ import java.util.Optional;
 @RequestMapping("/usuario")
 public class UsuarioController {
     @Autowired
-    UsuarioService usuarioService;
+    private UsuarioService usuarioService;
 
     @GetMapping
     public ArrayList<UsuarioModel> obtenerUsuarios(){
