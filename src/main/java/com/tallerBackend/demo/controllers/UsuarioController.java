@@ -40,8 +40,7 @@ public class UsuarioController {
         if(ok){
             return "se eliminó el usuario con id " + id;
         }
-        else{
-            return "No se pudo eliminar el usuario con id " + id;
-        }
+        // se remueve el else, esto incrementa ligeramente el tiempo de computo y es buena practica eliminarlos
+        return "No se pudo eliminar el usuario con id " + id;
     }
 }
