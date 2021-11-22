@@ -38,9 +38,14 @@ public class UsuarioController {
         return this.usuarioService.obtenerPorPrioridad(prioridad);
     }
 
-    @GetMapping(path="/query")
+    @GetMapping(path="/nombre/query")
     public ArrayList<UsuarioModel> obtenerUsuarioPorNombre(@RequestParam("nombre") String nombre){
         return this.usuarioService.obtenerPorNombre(nombre);
+    }
+
+    @GetMapping(path="/email/query")
+    public ArrayList<UsuarioModel> obtenerUsuarioPorEmail(@RequestParam("email") String email){
+        return this.usuarioService.obtenerPorEmail(email);
     }
 
     @DeleteMapping(path="/{id}")
